@@ -36,6 +36,7 @@ a {
   color:#39c;
   font-weight:400;
   text-decoration:none;
+  /*display: inline-block;*/
 }
 
 a small {
@@ -92,7 +93,7 @@ th {
 }
 
 img {
-  max-width:100%;
+  max-width:100%; 
 }
 
 header {
@@ -252,4 +253,82 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+
+.icon
+{
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  -webkit-border-radius: 8px;  
+  -moz-border-radius: 8px;  
+  border-radius: 8px; 
+}
+
+.icon span
+{
+  position: absolute;
+  top: -999em;
+}
+
+#github
+{
+    background: url("github.png") no-repeat 0 -64px;
+    background-size: 64px 128px;
+}
+#github:hover
+{
+  background-position: 0 0;
+}
+
+#facebook
+{
+    background: url("facebook.png") no-repeat 0 -64px;
+    background-size: 64px 128px;
+}
+#facebook:hover
+{
+  background-position: 0 0;
+}
+
+#googleplus
+{
+    background: url("googleplus.png") no-repeat 0 -64px;
+    background-size: 64px 128px;
+}
+#googleplus:hover
+{
+  background-position: 0 0;
+}
+
+#linkedin
+{
+    background: url("linkedin.png") no-repeat 0 -64px;
+    background-size: 64px 128px;
+}
+
+#linkedin:hover
+{
+  background-position: 0 0;
+}
+
+#tumblr
+{
+    background: url("tumblr.png") no-repeat 0 -64px;
+    background-size: 64px 128px;
+}
+#tumblr:hover
+{
+  background-position: 0 0;
+}
+
+#twitter
+{
+    background: url("twitter.png") no-repeat 0 -64px;
+    background-size: 64px 128px;
+}
+#twitter:hover
+{
+  background-position: 0 0;
 }
