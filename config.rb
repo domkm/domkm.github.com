@@ -47,6 +47,9 @@
 #   end
 # end
 
+activate :livereload
+activate :syntax
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
@@ -70,6 +73,9 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
+  # Minify HTML
+  activate :minify_html
+
   # Enable cache buster
   activate :cache_buster
 
@@ -78,11 +84,14 @@ configure :build do
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
-  require "middleman-smusher"
+  # require "middleman-smusher"
   activate :smusher
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+
+  # Activate Favicon Maker (turns 'favicon_base.png' into multiple favicon sizes, favicon_base.png should be 114x114 pixels)
+  activate :favicon_maker
 end
 
 # Middleman Deploy
@@ -92,3 +101,4 @@ activate :deploy do |deploy|
   deploy.method = :git
   deploy.branch = 'master'
 end
+
