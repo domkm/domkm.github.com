@@ -1,5 +1,0 @@
-
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "bio.rb"]
-auto: true
-pygments: true
-markdown: maruku
