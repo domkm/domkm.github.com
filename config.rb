@@ -7,9 +7,9 @@
 # require 'susy'
 
 # Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
+compass_config do |config|
+  config.output_style = :compact
+end
 
 ###
 # Page options, layouts, aliases and proxies
@@ -47,8 +47,8 @@
 #   end
 # end
 
+require 'middleman-livereload'
 activate :livereload
-activate :syntax
 
 set :css_dir, 'stylesheets'
 
@@ -67,6 +67,9 @@ set :markdown, autolink: true,
 
 # Build-specific configuration
 configure :build do
+
+  activate :syntax
+
   # For example, change the Compass output style for deployment
   activate :minify_css
 
@@ -96,6 +99,7 @@ end
 
 # Middleman Deploy
 # gem install middleman-deploy
+require 'middleman-deploy'
 activate :deploy do |deploy|
   deploy.clean = true
   deploy.method = :git
