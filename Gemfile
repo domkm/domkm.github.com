@@ -2,6 +2,7 @@ source :rubygems
 
 gem 'middleman', '~>3.0.7'
 gem 'middleman-deploy'
+gem 'middleman-smusher'
 
 gem 'coffee-script'
 gem 'oj' # faster JSON
