@@ -80,7 +80,7 @@ configure :build do
   activate :minify_html
 
   # Enable cache buster
-  activate :cache_buster
+  # activate :cache_buster
 
   # Use relative URLs
   # activate :relative_assets
