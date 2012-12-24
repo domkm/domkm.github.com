@@ -2,17 +2,34 @@
 
 @import "normalize";
 @include normalize;
-@import "compass";
 
+/* colors */
+@import "base16";
+$black: $base00;
+$darkest-gray: $base01;
+$dark-gray: $base02;
+$gray: $base03;
+$light-gray: $base04;
+$very-light-gray: $base05;
+$lightest-gray: $base06;
+$white: $base07;
+$red: $base08;
+$orange: $base09;
+$yellow: $base0A;
+$green: $base0B;
+$blue-green: $base0C;
+$blue: $base0D;
+$purple: $base0E;
+$brown: $base0F;
 
 body {
-  background: #d4d4d4 url("../images/background.png");
+  background: $darkest-gray;
   text-align: center;
   font-family: sans-serif;
 }
 
 h1 {
-  color: rgba(0, 0, 0, 0.3);
+  color: $purple;
   font-weight: bold;
   font-size: 32px;
   letter-spacing: -1px;
