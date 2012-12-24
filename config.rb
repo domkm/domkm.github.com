@@ -2,6 +2,10 @@
 # Compass
 ###
 
+# Normalize CSS
+# gem install compass-normalize-plugin
+require 'normalize'
+
 # Susy grids in Compass
 # First: gem install susy --pre
 require 'susy'

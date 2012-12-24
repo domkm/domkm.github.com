@@ -9,6 +9,7 @@ gem 'middleman-smusher'
 gem 'middleman-syntax'
 
 gem 'coffee-script'
+gem 'compass-normalize-plugin'
 gem 'oj' # faster JSON
 gem 'redcarpet' # better markdown
 gem 'slim' # HAML sucks
