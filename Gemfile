@@ -12,4 +12,5 @@ gem 'coffee-script'
 gem 'oj' # faster JSON
 gem 'redcarpet' # better markdown
 gem 'slim' # HAML sucks
+gem 'susy'
 # gem 'therubyracer' # faster ExecJS

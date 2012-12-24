@@ -4,7 +4,7 @@
 
 # Susy grids in Compass
 # First: gem install susy --pre
-# require 'susy'
+require 'susy'
 
 # Change Compass configuration
 compass_config do |config|
@@ -65,10 +65,10 @@ set :markdown, autolink: true,
                strikethrough: true,
                superscript: true
 
+activate :syntax
 # Build-specific configuration
 configure :build do
 
-  activate :syntax
 
   # For example, change the Compass output style for deployment
   activate :minify_css
