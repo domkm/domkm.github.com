@@ -3,7 +3,19 @@ title:
 ---
 
 div class="welcome"
-  h1
-    | Middleman is Watching
-  p class="doc"
-    | Documentation text
+  div class="contain"
+    div class="content"
+      /div id="header"
+        header
+          h1 Dom Kiva-Meyer
+      div id="promo"
+        p id="first-name" Dom 
+        p id="last-name" Kiva-Meyer
+      p id="info"
+        | Find me on 
+           #{{ social_link_to "Twitter" }},
+            #{{ social_link_to "Tumblr" }},
+             #{{ social_link_to "GitHub" }},
+              #{{ social_link_to "LinkedIn" }},
+               #{{ social_link_to "Facebook" }},
+                & #{{ social_link_to "Google+" }}.
