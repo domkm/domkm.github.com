@@ -45,11 +45,19 @@ end
 # activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def social_link_to(site)
+    sites = {
+    "Facebook" => "http://facebook.com/domkm",
+    "GitHub" => "http://github.com/domkm",
+    "Google+" => "http://plus.google.com/u/0/113061429105470827929",
+    "LinkedIn" => "http://linkedin.com/in/domkm",
+    "Tumblr" => "http://domkm.tumblr.com",
+    "Twitter" => "http://twitter.com/domkm"
+  }
+  link_to site, sites[site], id: site.downcase.gsub('+', 'plus'), target: "_blank"
+  end
+end
 
 require 'middleman-livereload'
 activate :livereload
