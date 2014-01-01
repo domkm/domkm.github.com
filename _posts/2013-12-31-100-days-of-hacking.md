@@ -2,7 +2,7 @@
 category: 100-days-of-hacking
 layout: post
 title: 100 Days of Hacking
-description: "Starting 2014 off with 100 days of hacking."
+description: "Starting 2014 with 100 days of hacking."
 tags: [learning, coding, programming]
 comments: true
 share: true
