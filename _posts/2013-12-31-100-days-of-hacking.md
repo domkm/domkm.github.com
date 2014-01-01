@@ -1,5 +1,5 @@
 ---
-category: 100 Days of Hacking (2014)
+category: 100-days-of-hacking
 layout: post
 title: 100 Days of Hacking
 description: "Starting 2014 off with 100 days of hacking."
