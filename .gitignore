@@ -1,0 +1,4 @@
+_site
+.DS_Store
+node_modules
+schedule_and_resources.md

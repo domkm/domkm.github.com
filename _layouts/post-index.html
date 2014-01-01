@@ -1,0 +1,40 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+{% include head.html %}
+</head>
+
+<body id="post-index" class="feature" itemscope itemtype="http://schema.org/WebPage">
+
+{% include browser-upgrade.html %}
+{% include navigation.html %}
+
+<div class="entry-header">
+  <div class="entry-image">
+    <img id="feature-image" src="{{ site.url }}/images/abstract-1.jpg" alt="{{ page.title }}" itemprop="image">
+  </div><!-- /.entry-image -->
+  <div class="header-title">
+    <div class="header-title-wrap">
+      <h1 itemprop="name">{{ page.title }}</h1>
+      <!-- <h2 itemprop="name">{{ page.title }}</h2> -->
+    </div><!-- /.header-title-wrap -->
+  </div><!-- /.header-title -->
+</div><!-- /.entry-header -->
+
+<div id="main" role="main" itemprop="mainContentOfPage" itemscope itemtype="http://schema.org/Blog">
+  {{ content }}
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    {% include footer.html %}
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+{% include scripts.html %}
+
+</body>
+</html>
