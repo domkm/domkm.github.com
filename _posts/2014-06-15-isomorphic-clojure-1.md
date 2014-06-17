@@ -9,9 +9,9 @@ comments: true
 share: true
 ---
 
-In pursuit of supporting a dynamic and interactive user experience, the web has been shifting from traditional server-rendered multi-page applications[^MPAs] (MPAs) to client-rendered single-page applications[^SPAs] (SPAs).
+In pursuit of supporting a dynamic and interactive user experience, developers have been shifting from traditional server-rendered multi-page applications[^MPAs] (MPAs) to client-rendered single-page applications[^SPAs] (SPAs).
 
-The web has matured and become a fairly capable application platform, and SPAs utilize this platform to provide better experiences to users and developers. For users, applications can be more responsive to interaction and better facilitate dynamic experiences that are not possible/feasible with MPAs. For developers, building SPAs can provide a clearer separation of concerns and tends to enforce more client-side code structure. However, embracing SPAs is not without its drawbacks.
+The web has matured and become a fairly capable application platform and SPAs utilize this platform to provide better experiences to users and developers. For users, applications can be more responsive to interaction and better facilitate dynamic experiences that are not possible/feasible with MPAs. For developers, building SPAs can provide a clearer separation of concerns and tends to enforce more client-side code structure. However, embracing SPAs is not without its drawbacks.
 
 [^MPAs]: An MPA is a website that serves fully-formed or mostly-formed HTML when a client requests a page. Links cause the browser to request a new page; blowing away the previous DOM, CSSOM, and JS context. If rendered without JS execution, MPAs remain viewable and at least partially usable.
 
@@ -21,9 +21,9 @@ The web has matured and become a fairly capable application platform, and SPAs u
 ### MPA Pros & SPA Cons
 
 * **SEO** \\
-  Until [recently](http://googlewebmastercentral.blogspot.com/2014/05/understanding-web-pages-better.html), no major search engine executed JS. Though the only search engine that you care about reports to now execute JS, I would not be the first to question if this will put SPAs on equal footing with MPAs. Even if Google treats them the same, SPAs have significantly slower initial page-load speed, which negatively affects SEO. To serve fully-formed HTML, developers have resorted to crazy workarounds like rendering SPAs in headless browsers and serving HTML extracted from there. Needless to say, this introduces a whole new level of complexity.
+  Until [recently](http://googlewebmastercentral.blogspot.com/2014/05/understanding-web-pages-better.html), no major search engine executed JS. Though the only search engine that you care about reports to now execute JS, I would not be the first to question if this will put SPAs on equal footing with MPAs. Even if Google treats them the same, SPAs have significantly slower initial page-load speed and that negatively affects SEO. To serve fully-formed HTML, developers have resorted to crazy workarounds like rendering SPAs in headless browsers and serving HTML extracted from there. Needless to say, this introduces a whole new level of complexity.
 * **Page-Load Performance** \\
-  Serving fully-formed HTML is *fast*. Speed matters. Metrics from large companies have repeatedly demonstrated that user engagement decreases as latency increases. Rendering an initial request for an MPA requires fewer requests than for an SPA. For initial renders, SPAs additionally need to request and receive JS, execute it, and then request and receive data specific to that page.
+  Serving fully-formed HTML is *fast*. Speed matters. Metrics from large companies have repeatedly demonstrated that user engagement decreases as latency increases. Rendering an initial page for an MPA requires fewer requests than for an SPA. For initial renders, SPAs additionally need to request and receive JS, execute it, and then request and receive data specific to that page.
 * **Connection Quality** \\
   Slow or inconsistent connections can make SPAs unusable. This is particularly important for mobile users.
 * **Accessibility** \\
@@ -52,13 +52,13 @@ ClojureScript tools have changed dramatically in the past year.
 * [core.async](https://github.com/clojure/core.async/), a Clojure[Script] library that provides a great concurrency model, was released in June 2013.
 * [Sente](https://github.com/ptaoussanis/sente/), a Clojure[Script] library for bidirectional asynchronous communication over HTTP and Web Sockets via core.async's channel interface, was released in February 2014.
 
-Though the toolset is not yet complete (which I will discuss further in Part 2), these libraries go a long way in enabling isomorphism where it was previously infeasible.
+Though the toolset is not yet complete (which I will discuss further in Part 2), these libraries go a long way toward enabling isomorphism where it was previously infeasible.
 
-Instead of running JS across the entire stack, I want to run server-side Clojure, client-side ClojureScript, render fully-formed HTML using Nashorn with Om/React, and share client and server code since Clojure and ClojureScript have nearly identical syntax and semantics.
+Instead of running JS across the entire stack, we could run server-side Clojure, client-side ClojureScript, render fully-formed HTML using Nashorn with Om/React, and share client and server code since Clojure and ClojureScript have nearly identical syntax and semantics.
 
 ### Is Clojure[Script] Ready?
 
-I wrote [Omelette](https://github.com/DomKM/omelette), an example application, to experiment with isomorphic Clojure[Script] patterns. It's a basic word-finding application. Given a string and desired position/s, it returns a list of words where the string is in the desired position. For example, searching for words that start with "om" would return a list of words that include "omelette."
+I wrote [Omelette](https://github.com/DomKM/omelette), an example application, to experiment with isomorphic Clojure[Script] patterns. It's a basic word-finding application. Given a string and desired position/s, it returns a list of words where the string is in the desired position. For example, searching for words that start with "om" would return a list that includes "omelette."
 
 The goal was to make an isomorphic SPA where all routes are renderable by the server without a significant amount of extra work, code duplication, or `(if server? ...)` conditionals. Additionally, the client-side code should be able to take over transparently and quickly; no white flash and no additional requests.
 
